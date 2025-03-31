@@ -1,0 +1,3 @@
+runtime: docker
+options:
+  image: jpoissonnier/pulumi-docker-plugin-example:0.0.1
