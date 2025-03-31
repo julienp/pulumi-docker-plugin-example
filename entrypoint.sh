@@ -1,2 +1,2 @@
 #!/bin/bash
-uv run python /app/__main__.py %@
+exec uv run python /app/__main__.py %@
