@@ -5,4 +5,5 @@ ADD . /app
 WORKDIR /app
 RUN uv sync --frozen
 
-CMD ["uv", "run", "python", "/app/__main__.py"]
+ENTRYPOINT ["uv", "run", "python", "/app/__main__.py"]
+# CMD ["uv", "run", "python", "/app/__main__.py"]
