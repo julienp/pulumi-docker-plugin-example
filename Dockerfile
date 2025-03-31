@@ -5,4 +5,4 @@ ADD . /app
 WORKDIR /app
 RUN uv sync --frozen
 
-CMD ["python", "/app/__main__.py"]
+CMD ["uv", "run", "python", "/app/__main__.py"]
