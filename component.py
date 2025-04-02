@@ -17,7 +17,7 @@ class Greeter(pulumi.ComponentResource):
         args: GreeterArgs,
         opts: Optional[pulumi.ResourceOptions] = None,
     ):
-        super().__init__("cloudrun:index:Service", name, {}, opts)
+        super().__init__("greeter:index:Greeter", name, {}, opts)
         who = args.get("who") or "Pulumipus"
         greeting_word = pulumi_random.RandomShuffle(
             f"{name}-greeting",
