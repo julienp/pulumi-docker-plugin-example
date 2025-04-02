@@ -9,6 +9,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     tini \
     git
 ADD . /app
+RUN echo "#!/bin/bash\nexec uv run python /app/__main__.py \$@" > /app/entrypoint.sh && \
+    chmod +x /app/entrypoint.sh
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 ENV PULUMI_DOCKER=1
