@@ -1,6 +1,9 @@
 FROM python:3.12-slim-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
-RUN apt-get update && apt-get install -qy \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install \
+    --quiet \
+    --yes \
     -o APT::Install-Recommends=false \
     -o APT::Install-Suggests=false \
     tini \
